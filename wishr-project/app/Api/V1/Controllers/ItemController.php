@@ -1,8 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Api\V1\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use JWTAuth;
+use App\Item;
+use Dingo\Api\Routing\Helpers;
 
 class ItemController extends Controller
 {
@@ -11,8 +15,9 @@ class ItemController extends Controller
     public function index()
 	{
 	    $currentUser = JWTAuth::parseToken()->authenticate();
-	    return $currentUser
-	        ->items()
+	    $userWishlist = $currentUser->wishlist()->first();
+	    return $userWishlist
+	        ->item()
 	        ->get()
 	        ->toArray();
 	}
@@ -21,49 +26,19 @@ class ItemController extends Controller
 	{
 	    $currentUser = JWTAuth::parseToken()->authenticate();
 
-	    $userWishlist = $currentUser->wishlist()->find($id);
+	    $userWishlist = $currentUser->wishlist()->first();
 
 	    $item = new Item;
 
 	    $item->name = $request->get('name');
 	    $item->category = $request->get('category');
 
-	    if($currentUser->wishlist()->save($wishlist))
+	    if($userWishlist->item()->save($item))
 	        return $this->response->created();
 	    
 	    else
-	        return $this->response->error('could_not_create_wishlist', 500);
+	        return $this->response->error('could_not_create_item', 500);
 	    
 	}
 
-	public function update(Request $request, $id)
-	{
-	    $currentUser = JWTAuth::parseToken()->authenticate();
-
-	    $wishlist = $currentUser->wishlist()->find($id);
-	    if(!$wishlist)
-	        throw new NotFoundHttpException;
-
-	    $wishlist->fill($request->all());
-
-	    if($wishlist->save())
-	        return $this->response->noContent();
-	    else
-	        return $this->response->error('could_not_update_wishlist', 500);
-	}
-
-	public function destroy($id)
-	{
-	    $currentUser = JWTAuth::parseToken()->authenticate();
-
-	    $wishlist = $currentUser->wishlist()->find($id);
-
-	    if(!$wishlist)
-	        throw new NotFoundHttpException;
-
-	    if($wishlist->delete())
-	        return $this->response->noContent();
-	    else
-	        return $this->response->error('could_not_delete_wishlist', 500);
-	}
 }

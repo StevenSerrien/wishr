@@ -15,6 +15,9 @@ $api->version('v1', function (Router $api) {
     });
 
     $api->group(['middleware' => 'api.auth'], function ($api) {
+        $api->post('item/store', 'App\Api\V1\Controllers\ItemController@store');
+        $api->get('item', 'App\Api\V1\Controllers\ItemController@index');
+
         $api->post('wishlist/store', 'App\Api\V1\Controllers\WishlistController@store');
         $api->get('wishlist', 'App\Api\V1\Controllers\WishlistController@index');
         $api->put('wishlist/update/{id}', 'App\Api\V1\Controllers\WishlistController@update');
