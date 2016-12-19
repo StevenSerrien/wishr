@@ -8,7 +8,7 @@ var home = require('./app/main');
 var header = require('./app/header');
 var footer = require('./app/footer');
 
-require('./index.scss');
+require('./resources/sass/index.scss');
 
 angular
   .module('app', [techsModule, 'ui.router'])
