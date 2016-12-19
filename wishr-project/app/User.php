@@ -38,4 +38,9 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($value);
     }
+
+    public function wishlist()
+    {
+        return $this->hasOne('App\Wishlist');
+    }
 }

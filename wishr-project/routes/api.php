@@ -14,6 +14,13 @@ $api->version('v1', function (Router $api) {
         $api->post('reset', 'App\\Api\\V1\\Controllers\\ResetPasswordController@resetPassword');
     });
 
+    $api->group(['middleware' => 'api.auth'], function ($api) {
+        $api->post('wishlist/store', 'App\Api\V1\Controllers\WishlistController@store');
+        $api->get('wishlist', 'App\Api\V1\Controllers\WishlistController@index');
+        $api->put('wishlist/update/{id}', 'App\Api\V1\Controllers\WishlistController@update');
+        $api->delete('wishlist/delete/{id}', 'App\Api\V1\Controllers\WishlistController@destroy');
+    });
+
     $api->group(['middleware' => 'jwt.auth'], function(Router $api) {
         $api->get('protected', function() {
             return response()->json([
@@ -37,3 +44,4 @@ $api->version('v1', function (Router $api) {
         ]);
     });
 });
+
