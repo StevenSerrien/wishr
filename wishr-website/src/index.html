@@ -15,14 +15,28 @@
   <nav id="nav-main">
     <div class='container-fluid'>
       <div class="navbar-header">
-        <a class="navbar-brand"><img ng-src="./resources/images/WISHRv2.png" class='img-responsive' alt="mowly-logo"></a>
+        <a class="navbar-brand"><img ng-src="./resources/images/WISHRv4.png" class='img-responsive' alt="mowly-logo"></a>
       </div>
       <div class="navbar-right">
         <ul class="nav navbar-nav">
+          <div class="button_container" id="toggle">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+          </div>
           <!-- <li ><a  [routerLink]="['']">HOME</a></li> -->
-          <li ><a  [routerLink]="['/business']">MENU</a></li>
+          <!-- <li ><a  [routerLink]="['/business']">MENU</a></li> -->
         </ul>
       </div><!--/.nav-collapse -->
+      <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+          <ul>
+            <li ><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Scrambler</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
     </div>
   </nav>
@@ -30,5 +44,7 @@
     <fountain-header></fountain-header>
     <ui-view></ui-view>
     <fountain-footer></fountain-footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" ng-src="./resources/js/javascript.js"></script>
   </body>
 </html>

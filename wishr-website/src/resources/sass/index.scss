@@ -10,13 +10,19 @@
 @import "ui/navbar";
 
 
+nav {
+height: 60px;
+}
+
 .navbar-brand {
   padding: 0px;
 }
 .navbar-brand>img {
-  height: 100%;
-  padding: 2px;
+  height: 130%;
+  padding: 0px;
+  padding-top: 5px;
   width: auto;
+  z-index: 999;
 }
 
 
