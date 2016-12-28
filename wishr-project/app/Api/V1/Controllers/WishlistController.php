@@ -42,6 +42,7 @@ class WishlistController extends Controller
 	    $currentUser = JWTAuth::parseToken()->authenticate();
 
 	    $wishlist = $currentUser->wishlist()->find($id);
+	    
 	    if(!$wishlist)
 	        throw new NotFoundHttpException;
 
