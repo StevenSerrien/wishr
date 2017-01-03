@@ -13,12 +13,18 @@ section#register{
 
 }
 
+p.switch {
+  margin-top: 10px;
+  font-size: 0.8em;
+  padding-left: 50px;
+}
+
 .register-form {
   padding: 15px 20px;
 
   margin-left: 75px;
   margin-right: 75px;
-  height: 500px;
+  height: 525px;
   background-color: $color-main;
   position: relative;
   top: 100px;
@@ -32,7 +38,7 @@ section#register{
 
   .group {
     position:relative;
-  margin-top: 50px;
+  margin-top: 40px;
   }
 
   .inputMaterial 				{

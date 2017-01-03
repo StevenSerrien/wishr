@@ -2,6 +2,9 @@ var angular = require('angular');
 
 var techsModule = require('./app/techs/index');
 require('angular-ui-router');
+require('angular-toastr');
+require('angular-animate');
+
 var routesConfig = require('./routes');
 
 var home = require('./app/main');
@@ -12,7 +15,7 @@ var footer = require('./app/footer');
 require('./resources/sass/index.scss');
 
 angular
-  .module('app', [techsModule, 'ui.router'])
+  .module('app', [techsModule, 'ui.router', 'ngAnimate', 'toastr'])
   .config(routesConfig)
   .component('home', home)
   .component('register', register)

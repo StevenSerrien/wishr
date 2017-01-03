@@ -74,13 +74,13 @@
 
     &.register {
       font-family: $font-secundary;
-      top: 75px;
+      margin-top: 45px;
       font-size: 0.9em;
-      position: relative;
-      left: 50%;
+
+      left: -10%;
       border: none;
-      transform: translate(-50%);
-      width: 80%;
+      transform: translate(8%);
+      width: 87%;
       border-radius: 5px;
     }
 
