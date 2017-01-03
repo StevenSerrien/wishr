@@ -8,6 +8,6 @@ function registerController($scope, toastr, auth) {
   toastr.error('Your credentials are wrong');
 
   this.register = function () {
-    auth.register("stevenserrien10@gmail.com", "DePatere9", "test123");
+    auth.register("stevenserrien100@gmail.com", "DePatere44", "test123");
   };
 }

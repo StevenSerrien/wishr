@@ -4,11 +4,11 @@ function AuthenticationService($http, $rootScope, $log) {
   service.register = function (email, username, password) {
     $http({
       method: "POST",
-      url: $rootScope.BASE_URL + "/auth/signup",
+      url: "http://wishr-backend.dev/api/auth/signup",
       data: {
         email: email,
         password: password,
-        username: username
+        name: username
       }
     }).then(function success(response) {
         localStorage.setItem("token", response.data.token);
