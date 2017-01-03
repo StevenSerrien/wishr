@@ -13,6 +13,11 @@ $color-theme-1:		#ffcc00;
 
 section {
   min-height: 100%;
+  height: 100vh;
+  .main-content {
+    position: relative;
+    top: 90px;
+  }
 }
 
 
@@ -65,7 +70,7 @@ $layout-3:			1023px;
 /*
  * Layout 02 - - - 420px - 767px */
 @media all and (min-width: ($layout-1 + 1px)) and (max-width: $layout-2) {
-  
+
 }
 
 /*
