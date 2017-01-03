@@ -1,0 +1,65 @@
+
+.relative {
+  position: relative;
+}
+
+.button {
+  &.center {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  &.float-right {
+    float: right;
+  }
+
+  &.float-left {
+    float: left;
+  }
+
+  &.type-1 {
+    font-weight: 600;
+    height: 50px;
+    min-width: 200px;
+    border-radius: 50px;
+    border: 1px solid #ef6e30;
+    background-color: #ef6e30;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-family: 'Open Sans', sans-serif;
+
+
+    &:hover {
+      background-color: white;
+      border: 1px solid #ef6e30;
+      color: #ef6e30;
+    }
+  }
+
+  &.type-2 {
+    font-weight: 600;
+    height: 50px;
+    min-width: 200px;
+    border-radius: 50px;
+    background-color: white;
+    border: 1px solid #ef6e30;
+    color: #ef6e30;
+
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-family: 'Open Sans', sans-serif;
+
+
+    &:hover {
+      border: 1px solid #ef6e30;
+      background-color: #ef6e30;
+      color: white;
+    }
+  }
+
+
+
+
+}

@@ -1,8 +1,8 @@
 #nav-main {
-  background-color: $color-navbar;
+  background-color: white;
+
 }
 
-@import url(http://fonts.googleapis.com/css?family=Vollkorn|Roboto);
 
 $color-active: #FFF;
 $color-link: #FFF;
@@ -45,13 +45,13 @@ $button-width: 35px;
 
 
 .button_container {
-  position: fixed;
-  top: 1.5%;
+  position: absolute;
+  top: 2.5%;
   right: 2%;
   height: $button-height;
   width: $button-width;
   cursor: pointer;
-  z-index: 100;
+  z-index: 999;
   transition: opacity .25s ease;
 
   &:hover {
@@ -75,7 +75,7 @@ $button-width: 35px;
   }
 
   span {
-  background: white;
+  background: #f7be52;
   border: none;
   height: 5px;
   width: 100%;
@@ -84,6 +84,7 @@ $button-width: 35px;
   left: 0;
   transition:  all .35s ease;
   cursor: pointer;
+  z-index: 99;
 
     &:nth-of-type(2) {
       top: 11px;
@@ -106,6 +107,8 @@ $button-width: 35px;
   visibility: hidden;
   transition: opacity .35s, visibility .35s, height .35s;
   overflow: hidden;
+  z-index: 900;
+
 
   &.open {
     opacity: .9;

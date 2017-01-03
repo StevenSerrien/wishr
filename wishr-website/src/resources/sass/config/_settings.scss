@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans|Quicksand|Roboto+Slab);
+
 /*
  *
  * Define colours */
@@ -6,6 +8,12 @@ $color-main:     #f7be52;
 $color-navbar:    #fcd486;
 $color-theme-2: 	#6a708f;
 $color-theme-1:		#ffcc00;
+
+
+
+section {
+  min-height: 100%;
+}
 
 
 
@@ -21,7 +29,9 @@ $layout-3:			1023px;
 /*
  *
  * Define fonts */
-$font-main: 		'Arial', sans-serif;
+ $font-main: 'Josefin Sans', sans-serif;
+ $font-secundary: 'Quicksand';
+ $font-tertiary: 'Roboto Slab';
 
 
 

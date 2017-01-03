@@ -1,6 +1,7 @@
 
 /* Helpers */
 @import "helpers/extends";
+@import "helpers/classes";
 /* Configuration */
 
 @import "config/settings";
@@ -8,6 +9,7 @@
 
 
 @import "ui/navbar";
+@import "ui/buttons";
 
 
 nav {
@@ -18,23 +20,31 @@ height: 60px;
   padding: 0px;
 }
 .navbar-brand>img {
-  height: 130%;
+  height: 150%;
   padding: 0px;
   padding-top: 5px;
   width: auto;
   z-index: 999;
 }
 
-
+section {
+  background: url(/resources/images/background-art-2.svg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
 
 html, body, #root {
   margin: 0;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
+
 }
 
 body, h1, h2, h3 {
-  font-weight: 300
+  // font-weight: 500;
+  color: $color-theme-2 !important;
+
 }
 
 a {
@@ -46,16 +56,72 @@ a {
   }
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
+h1.special {
+  font-family: 'Roboto Slab', serif;
+  color: $color-brand !important;
 }
+
+
+.main-wrapper {
+  margin-top: 100px;
+
+}
+
+.main-container {
+  font-family: $font-secundary;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .main {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .header {
   display: flex;
