@@ -12,6 +12,9 @@ var register = require('./app/components/start/register');
 var header = require('./app/header');
 var footer = require('./app/footer');
 
+// SERVICES
+var authenticationservice = require('./app/services/AuthenticationService');
+
 require('./resources/sass/index.scss');
 
 angular
@@ -20,4 +23,9 @@ angular
   .component('home', home)
   .component('register', register)
   .component('fountainHeader', header)
-  .component('fountainFooter', footer);
+  .component('fountainFooter', footer)
+  .service('auth', authenticationservice)
+  .run(function ($rootScope) {
+  // $rootScope.BASE_URL = "http://localhost:8888/public/";
+  $rootScope.BASE_URL = "http://wishr-backend.dev/api";
+});
