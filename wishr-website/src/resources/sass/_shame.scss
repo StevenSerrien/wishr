@@ -9,13 +9,13 @@ section#register{
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  height: 91vh;
+  height: 100%;
 
 }
 
 .register-form {
   padding: 15px 20px;
-  
+
   margin-left: 75px;
   margin-right: 75px;
   height: 500px;
@@ -29,4 +29,78 @@ section#register{
     color: white;
     font-family: $font-secundary;
   }
+
+  .group {
+    position:relative;
+  margin-top: 50px;
+  }
+
+  .inputMaterial 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:80%;
+  border:none;
+  border-bottom:2px solid #ffffff;
+  background-color: $color-main;
+}
+
+.inputMaterial:focus 		{ outline:none;}
+
+/* LABEL ======================================= */
+
+label 				 {
+  color:white;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:115px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+  min-width: 90px;
+}
+
+/* active state */
+.inputMaterial:focus ~ label, .inputMaterial:valid ~ label 		{
+  top:-20px;
+  left: 117px;
+  font-size:14px;
+
+  color:white;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:600px; }
+
+
+
+/* active state */
+.inputMaterial:focus ~ .bar:before, .inputMaterial:focus ~ .bar:after {
+  width:100%;
+}
+
+
+/* active state */
+.inputMaterial:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
 }

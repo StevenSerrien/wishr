@@ -71,6 +71,20 @@
       background-color: #ef6e30;
       color: white;
     }
+
+    &.register {
+      font-family: $font-secundary;
+      top: 75px;
+      font-size: 0.9em;
+      position: relative;
+      left: 50%;
+      border: none;
+      transform: translate(-50%);
+      width: 80%;
+      border-radius: 5px;
+    }
+
+
   }
 
 
