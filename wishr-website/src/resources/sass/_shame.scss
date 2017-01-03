@@ -1,0 +1,32 @@
+.yellow {
+
+
+}
+
+section#register{
+  background: url(/resources/images/register.png) no-repeat center center;
+  background-size: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 91vh;
+
+}
+
+.register-form {
+  padding: 15px 20px;
+  
+  margin-left: 75px;
+  margin-right: 75px;
+  height: 500px;
+  background-color: $color-main;
+  position: relative;
+  top: 100px;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+  h1, h2, h3, p {
+    color: white;
+    font-family: $font-secundary;
+  }
+}
