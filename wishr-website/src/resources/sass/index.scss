@@ -27,11 +27,12 @@ height: 60px;
   z-index: 999;
 }
 
-section {
+section#home {
   background: url(/resources/images/vjz7tkhncfk-ben-white-min.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
+  height: 100vh;
 }
 
 html, body, #root {
@@ -64,7 +65,7 @@ h1.special {
 
 .main-wrapper {
   margin-top: 100px;
-
+  height: 90vh;
 }
 
 .main-container {

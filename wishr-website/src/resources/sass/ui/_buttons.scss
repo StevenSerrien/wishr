@@ -3,20 +3,34 @@
   position: relative;
 }
 
+.button-container {
+  @media only screen and (min-width: 768px) {
+  top: 600px;
+  position: relative;
+  }
+}
+
 .button {
   &.center {
+    margin-top: 20px;
     position: relative;
     left: 50%;
     transform: translate(-50%);
   }
+  @media only screen and (min-width: 768px) {
+    &.float-right {
+      float: right;
+    }
 
-  &.float-right {
-    float: right;
+    &.float-left {
+      float: left;
+    }
+    &.center {
+      left: 0%;
+      transform: translate(-0%);
+    }
   }
 
-  &.float-left {
-    float: left;
-  }
 
   &.type-1 {
     font-weight: 600;
