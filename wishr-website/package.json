@@ -1,7 +1,18 @@
 {
   "dependencies": {
+    "@angular/common": "^2.4.1",
+    "@angular/compiler": "^2.4.1",
+    "@angular/core": "^2.4.1",
+    "@angular/forms": "^2.4.1",
     "angular": "^1.5.0",
-    "angular-ui-router": "1.0.0-beta.1"
+    "angular-ui-router": "1.0.0-beta.1",
+    "angular-animate": "^1.6.1",
+    "angular-socialshare": "^2.3.3",
+    "angular-toastr": "^2.1.1",
+    "babel-core": "^6.21.0",
+    "ng2-bootstrap": "^1.1.16",
+    "rxjs": "^5.0.2",
+    "zone.js": "^0.7.4"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0-beta.2",
