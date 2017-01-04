@@ -18,6 +18,9 @@ class CreateItemsTable extends Migration
 
             $table->string('name');
             $table->string('category');
+            $table->string('url');
+            $table->string('price');
+            $table->string('rating');
             $table->binary('image');
 
             $table->integer('user_id')->index();

@@ -28,6 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
     /**
      * Automatically creates hash for the user password.
      *
@@ -42,5 +43,25 @@ class User extends Authenticatable
     public function wishlist()
     {
         return $this->hasOne('App\Wishlist');
+    }
+
+    public function friends()
+    {
+        return $this->belongsToMany('App\User', 'friends_users', 'user_id', 'friend_id');
+    }
+
+    // public function users()
+    // {
+    //     return $this->belongsToMany('App\User', 'friends_users', 'friend_id', 'user_id');
+    // }
+
+    public function addFriend(User $user)
+    {
+        $this->friends()->attach($user->id);
+    }
+
+    public function removeFriend(User $user)
+    {
+        $this->friends()->detach($user->id);
     }
 }
