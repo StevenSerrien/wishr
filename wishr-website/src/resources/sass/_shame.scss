@@ -70,7 +70,7 @@ label 				 {
 }
 
 /* active state */
-.inputMaterial:focus ~ label, .inputMaterial:valid ~ label, .inputMaterial:invalid ~ label 		{
+.inputMaterial:focus ~ label, .inputMaterial:valid ~ label, .inputMaterial:not(:placeholder-shown) ~ label 		{
   top:-20px;
   left: 117px;
   font-size:14px;
