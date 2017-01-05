@@ -3,7 +3,7 @@ module.exports = {
   controller: registerController
 };
 
-function registerController($scope, toastr, auth, $log) {
+function registerController($scope, toastr, auth, $log, $location) {
   $scope.user = {};
 
   $scope.register = function () {
@@ -11,7 +11,16 @@ function registerController($scope, toastr, auth, $log) {
     $log.log($scope.user);
 
     if ($scope.registerForm.$valid) {
-        auth.register($scope.user.email, $scope.user.name, $scope.user.password);
+      $scope.loading = true;
+        auth.register($scope.user.email, $scope.user.name, $scope.user.password, function (result) {
+          if (result === true) {
+            $location.path('/');
+          }
+          else {
+            toastr.error('Email already exists.');
+            $scope.loading = false;
+          }
+        });
     }
     else {
       toastr.error('There has been an error.');

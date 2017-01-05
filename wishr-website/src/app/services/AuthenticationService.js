@@ -1,7 +1,7 @@
 function AuthenticationService($http, $rootScope, $log, toastr) {
   var service = this;
 
-  service.register = function (email, username, password) {
+  service.register = function (email, username, password, callback) {
     $http({
       method: "POST",
       url: "http://wishr-backend.dev/api/auth/signup",
@@ -12,11 +12,20 @@ function AuthenticationService($http, $rootScope, $log, toastr) {
       }
     }).then(function success(response) {
         localStorage.setItem("token", response.data.token);
+        $log.log(response);
+        service.getUserData();
         $log.log('Gelukt.');
+
+        // add jwt token to auth header for all requests made by the $http service
+        $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
+
+        // execute callback with true to indicate successful login
+        callback(true);
 
     }, function error() {
         toastr.error('This email already exists.');
         $log.log('Niet gelukt.');
+        callback(false);
     });
   };
 
@@ -45,7 +54,7 @@ function AuthenticationService($http, $rootScope, $log, toastr) {
     if (localStorage.token) {
       $http({
         method: "GET",
-        url: $rootScope.BASE_URL + "api/auth/user?token=" + localStorage.token
+        url: $rootScope.BASE_URL + "/auth/user?token=" + localStorage.token
       }).then(function mySucces(response) {
         $log.log("Userobject:" + angular.toJson(response.data.user));
         localStorage.setItem('user', angular.toJson(response.data.user));
