@@ -3,7 +3,7 @@
     <div class='container'>
       <div class="col-lg-6 col-lg-offset-3">
         <div class="yellow-form normal relative">
-          <form name="loginForm" ng-submit="register()" class='relative'>
+          <form name="loginForm" ng-submit="login()" class='relative'>
           <h1 class="text-center">Welcome back.</h1>
           <div class="group center" ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine }" >
             <input class="inputMaterial center" name='email' type="email" ng-model="user.email" placeholder=" " required>

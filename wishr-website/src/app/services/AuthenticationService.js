@@ -17,7 +17,7 @@ function AuthenticationService($http, $rootScope, $log, toastr, $location) {
         // add jwt token to auth header for all requests made by the $http service
         $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
 
-        // execute callback with true to indicate successful login
+        // execute callback with true to indicate successful register
         callback(true);
 
     }, function error() {
@@ -27,10 +27,10 @@ function AuthenticationService($http, $rootScope, $log, toastr, $location) {
     });
   };
 
-  service.login = function (email, password) {
+  service.login = function (email, password, callback) {
     $http({
       method: "POST",
-      url: $rootScope.BASE_URL + "api/auth/login",
+      url: $rootScope.BASE_URL + "/auth/login",
       data: {
         email: email,
         password: password
@@ -41,9 +41,11 @@ function AuthenticationService($http, $rootScope, $log, toastr, $location) {
 
         // Setting the userobject in localstorage
         service.getUserData();
-        $log.log("User logged in? - " + service.loggedIn());
+        // execute callback with true to indicate successful login
+        callback(true);
     }, function error() {
-        $log.log('Niet gelukt.');
+      // execute callback with true to indicate failed login
+        callback(false);
     });
   };
 
