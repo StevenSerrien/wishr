@@ -20,11 +20,13 @@ function AuthenticationService($http, $rootScope, $log, toastr) {
         $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
 
         // execute callback with true to indicate successful login
+        $rootScope.loggedIn = true;
         callback(true);
 
     }, function error() {
         toastr.error('This email already exists.');
         $log.log('Niet gelukt.');
+        $rootScope.loggedIn = true;
         callback(false);
     });
   };

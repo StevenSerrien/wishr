@@ -1,3 +1,8 @@
+function headerController($scope) {
+
+}
+
 module.exports = {
-  template: require('./header.html')
+  template: require('./header.html'),
+  controller: headerController
 };
