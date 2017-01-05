@@ -1,0 +1,12 @@
+section#dashboard {
+  background: url(/resources/images/background-art-2.svg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  min-height: 91vh;
+
+  h1,h2,h3, p {
+    color: $color-theme-2 !important;
+    font-family: $font-secundary;
+  }
+}

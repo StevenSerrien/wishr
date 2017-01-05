@@ -6,8 +6,6 @@ function headerController($scope, $rootScope, $log, auth) {
   $scope.logout = function () {
     auth.logout();
   };
-
-  $log.log($scope.loggedIn());
 }
 
 module.exports = {

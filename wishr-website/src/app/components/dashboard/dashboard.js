@@ -1,5 +1,11 @@
-function dashboardController($log, $rootScope) {
-  $log.log($rootScope.loggedIn);
+function dashboardController($scope, $log, $rootScope) {
+
+  $scope.init = function () {
+    $scope.user = angular.fromJson(localStorage.user);
+    $log.log($scope.user);
+  };
+
+  $scope.init();
 }
 module.exports = {
   templateUrl: 'app/components/dashboard/dashboard.html',
