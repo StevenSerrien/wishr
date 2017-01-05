@@ -1,3 +1,32 @@
-<div class="component">
-  <h2>{{$ctrl.text}}</h2>
-</div>
+<section id="login">
+  <div class='main-content clearfix'>
+    <div class='container'>
+      <div class="col-lg-6 col-lg-offset-3">
+        <div class="yellow-form normal relative">
+          <form name="loginForm" ng-submit="register()" class='relative'>
+          <h1 class="text-center">Welcome back.</h1>
+          <div class="group center" ng-class="{ 'has-error' : loginForm.email.$invalid && !loginForm.email.$pristine }" >
+            <input class="inputMaterial center" name='email' type="email" ng-model="user.email" placeholder=" " required>
+            <span class="highlight center"></span>
+            <span class="bar center"></span>
+            <label class='center'>Email</label>
+          </div>
+          <div class="group center" ng-class="{ 'has-error' : loginForm.password.$invalid && !loginForm.password.$pristine }">
+            <input name="password" class="inputMaterial center" type="password" ng-model="user.password" placeholder=" " ng-minlength="3" required>
+            <span class="highlight center"></span>
+            <span class="bar center"></span>
+            <label class="center">Password</label>
+          </div>
+          <div class="col-xs-12">
+            <img class='center' ng-if="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <button type="submit" ng-disabled="loginForm.$invalid" class='button type-2 register'>LOG IN</button>
+            <p class="switch">No account? <a href="">Sign up here.</a></p>
+          </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

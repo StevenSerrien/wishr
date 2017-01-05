@@ -14,6 +14,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/dashboard',
       component: 'dashboard'
     })
+    .state('login', {
+      url: '/login',
+      component: 'login'
+    })
     .state('register', {
       url: '/register',
       component: 'register'

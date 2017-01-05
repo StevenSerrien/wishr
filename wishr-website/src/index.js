@@ -9,6 +9,7 @@ var routesConfig = require('./routes');
 
 var home = require('./app/main');
 var register = require('./app/components/start/register');
+var login = require('./app/components/start/login');
 var dashboard = require('./app/components/dashboard/dashboard');
 var header = require('./app/header');
 var footer = require('./app/footer');
@@ -23,6 +24,7 @@ angular
   .config(routesConfig)
   .component('home', home)
   .component('register', register)
+  .component('login', login)
   .component('dashboard', dashboard)
   .component('fountainHeader', header)
   .component('fountainFooter', footer)
