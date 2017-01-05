@@ -14,6 +14,7 @@ function registerController($scope, toastr, auth, $log, $location) {
       $scope.loading = true;
         auth.register($scope.user.email, $scope.user.name, $scope.user.password, function (result) {
           if (result === true) {
+            auth.loggedIn();
             $location.path('/dashboard');
           }
           else {

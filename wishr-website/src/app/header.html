@@ -20,6 +20,8 @@
           <li ><a href="#">Home</a></li>
           <li><a href="#">About us</a></li>
           <li><a href="#">Scrambler</a></li>
+          <li ng-if="loggedIn()"><a href="#/login">My wishlists</a></li>
+          <li ng-if="loggedIn()"><a href="#/login">Log out</a></li>
         </ul>
       </nav>
     </div>

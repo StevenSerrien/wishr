@@ -12,21 +12,17 @@ function AuthenticationService($http, $rootScope, $log, toastr) {
       }
     }).then(function success(response) {
         localStorage.setItem("token", response.data.token);
-        $log.log(response);
         service.getUserData();
-        $log.log('Gelukt.');
 
         // add jwt token to auth header for all requests made by the $http service
         $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
 
         // execute callback with true to indicate successful login
-        $rootScope.loggedIn = true;
         callback(true);
 
     }, function error() {
         toastr.error('This email already exists.');
-        $log.log('Niet gelukt.');
-        $rootScope.loggedIn = true;
+        service.loggedIn();
         callback(false);
     });
   };
@@ -58,7 +54,7 @@ function AuthenticationService($http, $rootScope, $log, toastr) {
         method: "GET",
         url: $rootScope.BASE_URL + "/auth/user?token=" + localStorage.token
       }).then(function mySucces(response) {
-        $log.log("Userobject:" + angular.toJson(response.data.user));
+        // $log.log("Userobject:" + angular.toJson(response.data.user));
         localStorage.setItem('user', angular.toJson(response.data.user));
       }, function myError(response) {
         $log.log(response);
