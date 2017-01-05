@@ -1,4 +1,4 @@
-function AuthenticationService($http, $rootScope, $log, toastr) {
+function AuthenticationService($http, $rootScope, $log, toastr, $location) {
   var service = this;
 
   service.register = function (email, username, password, callback) {
@@ -76,6 +76,7 @@ function AuthenticationService($http, $rootScope, $log, toastr) {
   // Function to logout by removing localstorage.token
   service.logout = function () {
     localStorage.clear();
+    $location.path('/');
   };
 }
 

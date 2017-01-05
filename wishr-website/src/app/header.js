@@ -3,6 +3,10 @@ function headerController($scope, $rootScope, $log, auth) {
     return auth.loggedIn();
   };
 
+  $scope.logout = function () {
+    auth.logout();
+  };
+
   $log.log($scope.loggedIn());
 }
 
