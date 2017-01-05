@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use JWTAuth;
 use App\Item;
+use App\Wishlist;
+use App\User;
 use Dingo\Api\Routing\Helpers;
 
 class ItemController extends Controller
@@ -22,23 +24,38 @@ class ItemController extends Controller
 	        ->toArray();
 	}
 
-    public function store(Request $request)
+	public function show($id){
+		$currentUser = JWTAuth::parseToken()->authenticate();
+
+		$wishlist = Wishlist::find($id);
+
+		return $wishlist
+	        ->item()
+	        ->get()
+	        ->toArray();
+	}
+
+    public function store(Request $request, $id)
 	{
 	    $currentUser = JWTAuth::parseToken()->authenticate();
 
-	    $userWishlist = $currentUser->wishlist()->first();
+	    $wishlist = Wishlist::find($id);
 
-	    $item = new Item;
+	    $wishlistUserID = $wishlist->user_id;
+
+	    $wishlistOwner = User::find($wishlistUserID);
+
+	    $item = new Item;  
 
 	    $item->name = $request->get('name');
 	    $item->category = $request->get('category');
+	    $item->user_id = $currentUser->id;
 
-	    if($userWishlist->item()->save($item))
+	    if($wishlist->item()->save($item))
 	        return $this->response->created();
 	    
 	    else
 	        return $this->response->error('could_not_create_item', 500);
-	    
 	}
 
 }

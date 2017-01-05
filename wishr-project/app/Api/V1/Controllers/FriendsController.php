@@ -38,6 +38,21 @@ class FriendsController extends Controller
 	    return $not_friends;
 	}
 
+	public function show()
+    {
+    	$currentUser = JWTAuth::parseToken()->authenticate();
+
+    	$friends = User::where('id', '!=', $currentUser->id);
+
+    	if ($currentUser->friends->count()) {
+	      $friends->whereIn('id', $currentUser->friends->modelKeys());
+	    }
+
+	    $friends = $friends->get();
+
+	    return $friends;
+	}
+
 	public function addFriend($id)
 	{
 		$currentUser = JWTAuth::parseToken()->authenticate();
@@ -52,7 +67,16 @@ class FriendsController extends Controller
 		$currentUser = JWTAuth::parseToken()->authenticate();
 		$user = User::find($id);
 		$currentUser->removeFriend($user);
-		
+
 		return $this->response->error('removed_friend', 200);
+	}
+
+	public function searchUsers(Request $request)
+	{
+		$currentUser = JWTAuth::parseToken()->authenticate();
+
+		$results = User::where('name', 'LIKE', '%' . $request->search . '%')->orWhere('email', 'LIKE', '%' . $request->search . '%')->get();
+
+		return $results;
 	}
 }

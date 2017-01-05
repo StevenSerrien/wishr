@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use JWTAuth;
 use App\Wishlist;
+use App\User;
 use Dingo\Api\Routing\Helpers;
 
 class WishlistController extends Controller
@@ -16,6 +17,16 @@ class WishlistController extends Controller
 	{
 	    $currentUser = JWTAuth::parseToken()->authenticate();
 	    return $currentUser
+	        ->wishlist()
+	        ->get()
+	        ->toArray();
+	}
+
+	public function show($id)
+	{
+		$userWishlists = User::find($id);
+
+	    return $userWishlists
 	        ->wishlist()
 	        ->get()
 	        ->toArray();
@@ -48,7 +59,7 @@ class WishlistController extends Controller
 
 	    $wishlist->fill($request->all());
 
-	    if($wishlist->save())
+	    if($wishlist->update())
 	        return $this->response->noContent();
 	    else
 	        return $this->response->error('could_not_update_wishlist', 500);

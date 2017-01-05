@@ -42,7 +42,12 @@ class User extends Authenticatable
 
     public function wishlist()
     {
-        return $this->hasOne('App\Wishlist');
+        return $this->hasMany('App\Wishlist');
+    }
+
+    public function item()
+    {
+        return $this->hasMany('App\Item');
     }
 
     public function friends()

@@ -7,9 +7,10 @@ $api = app(Router::class);
 
 $api->version('v1', function (Router $api) {
 
-    $api->get('findfriends', 'App\Api\V1\Controllers\FriendsController@getUsers');
-    $api->get('addfriend/{id}', 'App\Api\V1\Controllers\FriendsController@addFriend');
-    $api->get('removefriend/{id}', 'App\Api\V1\Controllers\FriendsController@removeFriend');
+
+
+    $api->post('searchuser', 'App\Api\V1\Controllers\FriendsController@searchUsers');
+
 
     $api->group(['prefix' => 'auth'], function(Router $api) {
         $api->post('signup', 'App\\Api\\V1\\Controllers\\SignUpController@signUp');
@@ -20,13 +21,22 @@ $api->version('v1', function (Router $api) {
     });
 
     $api->group(['middleware' => 'api.auth'], function ($api) {
-        $api->post('item/store', 'App\Api\V1\Controllers\ItemController@store');
+        $api->post('item/store/{id}', 'App\Api\V1\Controllers\ItemController@store');
         $api->get('item', 'App\Api\V1\Controllers\ItemController@index');
+        $api->get('item/show/{id}', 'App\Api\V1\Controllers\ItemController@show');
 
         $api->post('wishlist/store', 'App\Api\V1\Controllers\WishlistController@store');
         $api->get('wishlist', 'App\Api\V1\Controllers\WishlistController@index');
         $api->put('wishlist/update/{id}', 'App\Api\V1\Controllers\WishlistController@update');
         $api->delete('wishlist/delete/{id}', 'App\Api\V1\Controllers\WishlistController@destroy');
+        $api->get('wishlist/show/{id}', 'App\Api\V1\Controllers\WishlistController@show');
+
+
+
+        $api->get('findfriends', 'App\Api\V1\Controllers\FriendsController@getUsers');
+        $api->get('friends/show', 'App\Api\V1\Controllers\FriendsController@show');
+        $api->get('addfriend/{id}', 'App\Api\V1\Controllers\FriendsController@addFriend');
+        $api->get('removefriend/{id}', 'App\Api\V1\Controllers\FriendsController@removeFriend');
     });
 
     $api->group(['middleware' => 'jwt.auth'], function(Router $api) {
