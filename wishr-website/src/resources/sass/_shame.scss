@@ -70,7 +70,7 @@ label 				 {
 }
 
 /* active state */
-.inputMaterial:focus ~ label, .inputMaterial:valid ~ label 		{
+.inputMaterial:focus ~ label, .inputMaterial:valid ~ label, .inputMaterial:invalid ~ label 		{
   top:-20px;
   left: 117px;
   font-size:14px;
@@ -109,4 +109,13 @@ label 				 {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }
+}
+
+
+
+.has-error {
+
+    input.ng-invalid, input.ng-dirty {
+      border-bottom: 2px solid rgba(201, 22, 22, 0.71);
+    }
 }

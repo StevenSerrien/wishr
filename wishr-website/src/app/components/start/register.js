@@ -3,11 +3,18 @@ module.exports = {
   controller: registerController
 };
 
-function registerController($scope, toastr, auth) {
-  this.text = 'My brand new component!';
-  toastr.error('Your credentials are wrong');
+function registerController($scope, toastr, auth, $log) {
+  $scope.user = {};
 
-  this.register = function () {
-    auth.register("stevenserrien100@gmail.com", "DePatere44", "test123");
+  $scope.register = function () {
+
+    $log.log($scope.user);
+
+    if ($scope.registerForm.$valid) {
+        auth.register($scope.user.email, $scope.user.name, $scope.user.password);
+    }
+    else {
+      toastr.error('There has been an error.');
+    }
   };
 }

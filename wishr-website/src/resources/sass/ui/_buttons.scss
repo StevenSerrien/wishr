@@ -10,6 +10,11 @@
   }
 }
 
+button[disabled], html input[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .button {
   &.center {
     margin-top: 20px;
@@ -64,6 +69,8 @@
     text-transform: uppercase;
     font-size: 0.8em;
     font-family: 'Open Sans', sans-serif;
+
+
 
 
     &:hover {

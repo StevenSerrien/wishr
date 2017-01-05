@@ -1,4 +1,4 @@
-function AuthenticationService($http, $rootScope, $log) {
+function AuthenticationService($http, $rootScope, $log, toastr) {
   var service = this;
 
   service.register = function (email, username, password) {
@@ -15,6 +15,7 @@ function AuthenticationService($http, $rootScope, $log) {
         $log.log('Gelukt.');
 
     }, function error() {
+        toastr.error('This email already exists.');
         $log.log('Niet gelukt.');
     });
   };

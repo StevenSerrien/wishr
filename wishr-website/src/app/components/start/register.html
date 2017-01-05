@@ -4,28 +4,28 @@
       <div class="row">
       <div class="col-lg-6 col-lg-offset-6">
         <div class="register-form relative">
-          <form class='relative' action="">
+          <form name="registerForm" ng-submit="register()" class='relative'>
           <h1 class="text-center">Register now.</h1>
-          <div class="group center">
-            <input class="inputMaterial center" type="text" required>
+          <div class="group center" ng-class="{ 'has-error' : registerForm.email.$invalid && !registerForm.email.$pristine }" >
+            <input class="inputMaterial center" name='email' type="email" ng-model="user.email" required>
             <span class="highlight center"></span>
             <span class="bar center"></span>
             <label class='center'>Email</label>
           </div>
-          <div class="group center">
-            <input class="inputMaterial center" type="text" required>
+          <div class="group center" ng-class="{ 'has-error' : registerForm.username.$invalid && !registerForm.username.$pristine }">
+            <input class="inputMaterial center" name='username' type="text" ng-model="user.name" ng-minlength="3" required>
             <span class="highlight center"></span>
             <span class="bar center"></span>
             <label class='center'>Username</label>
           </div>
-          <div class="group center">
-            <input class="inputMaterial center" type="password" required>
+          <div class="group center" ng-class="{ 'has-error' : registerForm.password.$invalid && !registerForm.password.$pristine }">
+            <input name="password" class="inputMaterial center" type="password" ng-model="user.password" ng-minlength="3" required>
             <span class="highlight center"></span>
             <span class="bar center"></span>
             <label class="center">Password</label>
           </div>
           <div class="col-xs-12">
-            <button ng-click="$ctrl.register()" class='button type-2 register'>JOIN US</button>
+            <button type="submit" ng-disabled="registerForm.$invalid" class='button type-2 register'>JOIN US</button>
             <p class="switch">Already signed up? <a href="">Log in here.</a></p>
           </div>
 
