@@ -18,6 +18,10 @@ $api->version('v1', function (Router $api) {
 
         $api->post('recovery', 'App\\Api\\V1\\Controllers\\ForgotPasswordController@sendResetEmail');
         $api->post('reset', 'App\\Api\\V1\\Controllers\\ResetPasswordController@resetPassword');
+        $api->get('user', function () {
+          //get all user info
+          return JWTAuth::parseToken()->authenticate();
+        });
     });
 
     $api->group(['middleware' => 'api.auth'], function ($api) {
@@ -32,10 +36,7 @@ $api->version('v1', function (Router $api) {
         $api->get('wishlist/show/{id}', 'App\Api\V1\Controllers\WishlistController@show');
 
 
-        $api->get('user', function () {
-          //get all user info
-          return JWTAuth::parseToken()->authenticate();
-        });
+
         $api->get('findfriends', 'App\Api\V1\Controllers\FriendsController@getUsers');
         $api->get('friends/show', 'App\Api\V1\Controllers\FriendsController@show');
         $api->get('addfriend/{id}', 'App\Api\V1\Controllers\FriendsController@addFriend');
@@ -65,4 +66,3 @@ $api->version('v1', function (Router $api) {
         ]);
     });
 });
-
