@@ -15,7 +15,7 @@ function AuthenticationService($http, $rootScope, $log, toastr, $location) {
         service.getUserData();
 
         // add jwt token to auth header for all requests made by the $http service
-        $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
+        // $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
 
         // execute callback with true to indicate successful register
         callback(true);

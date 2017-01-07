@@ -5,10 +5,11 @@ init();
 function init() {
   $timeout(function () {
     $scope.user = angular.fromJson(localStorage.user);
+    wish.getAllWishlistsFromCurrentUser();
     $log.log($scope.user);
   }, 100);
 
-  wish.getAllWishlistsFromCurrentUser();
+
 }
 
 }
