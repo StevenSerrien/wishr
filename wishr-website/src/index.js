@@ -16,6 +16,7 @@ var footer = require('./app/footer');
 
 // SERVICES
 var authenticationservice = require('./app/services/AuthenticationService');
+var wishlistservice = require('./app/services/WishlistService');
 
 require('./resources/sass/index.scss');
 
@@ -29,6 +30,7 @@ angular
   .component('fountainHeader', header)
   .component('fountainFooter', footer)
   .service('auth', authenticationservice)
+  .service('wish', wishlistservice)
   .run(function ($rootScope) {
   // $rootScope.BASE_URL = "http://localhost:8888/public/";
   $rootScope.BASE_URL = "http://wishr-backend.dev/api";

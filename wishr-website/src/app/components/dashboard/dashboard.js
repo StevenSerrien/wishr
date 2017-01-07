@@ -1,11 +1,16 @@
-function dashboardController($scope, $log, $rootScope) {
+function dashboardController($scope, $log, $rootScope, $timeout, wish) {
+$scope.user = {};
 
-  $scope.init = function () {
+init();
+function init() {
+  $timeout(function () {
     $scope.user = angular.fromJson(localStorage.user);
     $log.log($scope.user);
-  };
+  }, 100);
 
-  $scope.init();
+  wish.getAllWishlistsFromCurrentUser();
+}
+
 }
 module.exports = {
   templateUrl: 'app/components/dashboard/dashboard.html',

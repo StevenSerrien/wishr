@@ -9,6 +9,7 @@ module.exports = {
     "padded-blocks": 0,
     "brace-style": 0,
     "no-else-return": 0,
-    "no-unused-vars": 0
+    "no-unused-vars": 0,
+    "quote-props": 0
   }
 }
