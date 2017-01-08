@@ -1,0 +1,71 @@
+.wish-card-wrap {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.wish-card {
+  min-height: 400px;
+  background-color: $color-main;
+  border-radius: 10px;
+}
+
+
+.titles {
+  // Edit the 130px value to resize the pentagon
+  background: transparent url("/resources/images/tile-background.svg") no-repeat 50% 50%/200px auto;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -ms-transform: translate3d(0, 0, 0);
+  /* -webkit-transform: translate3d(0, 0, 0); */
+  -o-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  /* transform: translate3d(0, 0, 0); */
+  /*
+  		transition: transform 150ms ease-out;
+  		transform: perspective(150px) rotateX(0deg) rotateY(0deg);
+  */
+  /* -webkit-transition: -webkit-transform 150ms ease-out; */
+  /* transition: transform 150ms ease-out; */
+  -webkit-transform: perspective(150px) rotateX(0deg) rotateY(0deg);
+  transform: perspective(150px) rotateX(0deg) rotateY(0deg);
+
+  &:hover {
+    // -webkit-transition: -webkit-transform 150ms ease-out;
+    // transition: transform 150ms ease-out;
+    // -webkit-transform: perspective(250px) rotateX(90deg) rotateY(0deg);
+    // transform: perspective(250px) rotateX(90deg) rotateY(0deg);
+  }
+
+  span {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+
+    h2 {
+      font-family: $font-secundary !important;
+      text-transform: uppercase;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-family: 'Arial', sans-serif !important;
+      color: rgb(200, 200, 200) !important;
+      text-transform: uppercase;
+    }
+  }
+}
