@@ -7,6 +7,24 @@
   min-height: 400px;
   background-color: $color-main;
   border-radius: 10px;
+
+  a {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    &:hover .titles {
+      -webkit-transition: -webkit-transform 150ms ease-out;
+      transition: transform 150ms ease-out;
+      -webkit-transform: perspective(0px) rotateX(90deg) rotateY(0deg);
+      transform: perspective(0px) rotateX(90deg) rotateY(0deg);
+    }
+  }
 }
 
 
@@ -40,15 +58,12 @@
   */
   /* -webkit-transition: -webkit-transform 150ms ease-out; */
   /* transition: transform 150ms ease-out; */
+  -webkit-transition: -webkit-transform 150ms ease-out;
+  transition: transform 150ms ease-out;
   -webkit-transform: perspective(150px) rotateX(0deg) rotateY(0deg);
   transform: perspective(150px) rotateX(0deg) rotateY(0deg);
 
-  &:hover {
-    // -webkit-transition: -webkit-transform 150ms ease-out;
-    // transition: transform 150ms ease-out;
-    // -webkit-transform: perspective(250px) rotateX(90deg) rotateY(0deg);
-    // transform: perspective(250px) rotateX(90deg) rotateY(0deg);
-  }
+
 
   span {
     position: absolute;
