@@ -1,14 +1,16 @@
 .avatar {
-  position: absolute;
+  position: relative;
+  left: 0;
   width: 100px;
   height: auto;
   border: 5px solid rgb(240, 240, 240);
-  margin-left: 20px;
+  // margin-left: 20px;
 }
 
 .wish-card-wrap {
   padding-left: 30px;
   padding-right: 30px;
+  margin-top: 100px;
 }
 
 .wish-card {
@@ -16,21 +18,52 @@
   background-color: $color-main;
   border-radius: 10px;
 
+
   a {
     display: block;
     overflow: hidden;
     position: absolute;
-    z-index: 1000;
+    z-index: 200;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
 
     &:hover .titles {
-      -webkit-transition: -webkit-transform 150ms ease-out;
-      transition: transform 150ms ease-out;
-      -webkit-transform: perspective(0px) rotateX(90deg) rotateY(0deg);
-      transform: perspective(0px) rotateX(90deg) rotateY(0deg);
+      // -webkit-transition: -webkit-transform 150ms ease-out;
+      // transition: transform 150ms ease-out;
+      // -webkit-transform: perspective(0px) rotateX(90deg) rotateY(0deg);
+      // transform: perspective(0px) rotateX(90deg) rotateY(0deg);
+    }
+  }
+}
+
+
+@media only screen and (max-device-width : 768px) {
+  .profilesection {
+    padding-left: 10px !important;
+  }
+
+  .profile-tag span{
+    h2, h3 {
+      font-size: 0.9em !important;
+    }
+
+  }
+
+  .titles {
+    background: transparent url("/resources/images/tile-background.svg") no-repeat 50% 50%/100px auto !important;
+  }
+  .wish-card-wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 35px;
+  }
+
+  .wish-card {
+    min-height: 200px !important;
+    h2,h3,h4 {
+      font-size: 0.9em !important;
     }
   }
 }

@@ -9,4 +9,34 @@ section#dashboard {
     color: $color-theme-2 !important;
     font-family: $font-secundary;
   }
+
+  .dashboard-content {
+
+  }
+
+  .profilesection {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .profile-tag {
+    img {
+      float: left;
+    }
+    span {
+      position: relative;
+      display: inline;
+      float: left;
+      margin-left: 20px;
+      margin-top: -10px;
+    }
+    h2, h3 {
+      display: block;
+    }
+    h3 {
+      color: $color-main !important;
+      font-family: 'Arial';
+      display: block;
+    }
+
+  }
 }
