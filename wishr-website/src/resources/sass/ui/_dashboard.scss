@@ -3,7 +3,7 @@ section#dashboard {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  min-height: 91vh;
+  height: auto;
 
   h1,h2,h3, p {
     color: $color-theme-2 !important;
