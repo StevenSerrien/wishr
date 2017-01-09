@@ -21,6 +21,7 @@ class WishlistController extends Controller
 
 	    $response = array();
 
+	    if (count($userWishlists) > 0) {
 	    foreach ($userWishlists as $key) {
 	    	foreach ($key->item as $item) {
 	    		$user = $item->user_id;
@@ -30,6 +31,14 @@ class WishlistController extends Controller
 	    array_push($response, $user, $userWishlists);	
 
 	    return $response;
+		}
+		else {
+			return $userWishlists;
+		}
+
+	    
+
+	    
 	}
 
 	public function show($id)
