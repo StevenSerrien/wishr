@@ -61,6 +61,30 @@ function WishlistService($http, $log, $rootScope, $q) {
       });
     }
   };
+
+  var items;
+  service.getItemsOnWishlist = function (id) {
+    if (!items) {
+    // Create deferred object
+    var deferred = $q.defer();
+    $http({
+      method: 'GET',
+      headers: {
+        'Content-Type': undefined,
+        'Authorization': 'Bearer ' + localStorage.token
+      },
+      url: $rootScope.BASE_URL + "/item/show/" + id
+    }).then(function successCallback(response) {
+      items = response.data;
+      deferred.resolve(items);
+    }, function errorCallback(error) {
+      results = error;
+      deferred.reject(error);
+    });
+    items = deferred.promise;
+    }
+    return $q.when(items);
+  };
 }
 
 module.exports = WishlistService;
