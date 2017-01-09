@@ -4,7 +4,7 @@ function AuthenticationService($http, $rootScope, $log, toastr, $location) {
   service.register = function (email, username, password, callback) {
     $http({
       method: "POST",
-      url: "http://wishr-backend.dev/api/auth/signup",
+      url: $rootScope.BASE_URL + "/auth/signup",
       data: {
         email: email,
         password: password,
