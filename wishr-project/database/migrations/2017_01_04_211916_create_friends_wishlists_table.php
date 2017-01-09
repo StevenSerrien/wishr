@@ -32,6 +32,6 @@ class CreateFriendsWishlistsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('friends_users');
+        Schema::drop('friends_wishlists');
     }
 }

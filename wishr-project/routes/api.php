@@ -35,8 +35,6 @@ $api->version('v1', function (Router $api) {
         $api->delete('wishlist/delete/{id}', 'App\Api\V1\Controllers\WishlistController@destroy');
         $api->get('wishlist/show/{id}', 'App\Api\V1\Controllers\WishlistController@show');
 
-
-
         $api->get('findfriends', 'App\Api\V1\Controllers\FriendsController@getUsers');
         $api->get('friends/show', 'App\Api\V1\Controllers\FriendsController@show');
         $api->get('addfriend/{id}', 'App\Api\V1\Controllers\FriendsController@addFriend');

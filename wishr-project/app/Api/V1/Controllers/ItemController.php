@@ -8,6 +8,7 @@ use JWTAuth;
 use App\Item;
 use App\Wishlist;
 use App\User;
+use App\Photo;
 use Dingo\Api\Routing\Helpers;
 
 class ItemController extends Controller
@@ -49,13 +50,29 @@ class ItemController extends Controller
 
 	    $item->name = $request->get('name');
 	    $item->category = $request->get('category');
+	    $item->url = $request->get('url');
+	    $item->price = $request->get('price');
+	    $item->rating = $request->get('rating');
 	    $item->user_id = $currentUser->id;
 
-	    if($wishlist->item()->save($item))
-	        return $this->response->created();
-	    
-	    else
+	    $file = $request->file('photo');
+
+        $imageName = $request->file('photo')->getClientOriginalName();
+        $imageName = rand(0, 10000) . $imageName;
+        $file->move(base_path() . '/public/uploads/products', $imageName);
+
+        $photo = new Photo();
+
+        $photo->name = $imageName;
+
+	    if($wishlist->item()->save($item)){
+			$photo->item_id = $item->id;
+			$photo->save();
+			return $item;
+	    }
+	    else {
 	        return $this->response->error('could_not_create_item', 500);
+	    }
 	}
 
 }
