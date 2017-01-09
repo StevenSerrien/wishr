@@ -22,6 +22,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/login',
       component: 'login'
     })
+    .state('wishlist', {
+      url: '/wishlist/:wishlistId',
+      component: 'wishlist'
+    })
     .state('register', {
       url: '/register',
       component: 'register'

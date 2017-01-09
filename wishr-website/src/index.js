@@ -11,6 +11,7 @@ var routesConfig = require('./routes');
 var home = require('./app/main');
 var register = require('./app/components/start/register');
 var login = require('./app/components/start/login');
+var wishlist = require('./app/components/wishlist/wishlist');
 var dashboard = require('./app/components/dashboard/dashboard');
 var friends = require('./app/components/dashboard/friends');
 var header = require('./app/header');
@@ -32,6 +33,7 @@ angular
   .component('register', register)
   .component('login', login)
   .component('dashboard', dashboard)
+  .component('wishlist', wishlist)
   .component('fountainHeader', header)
   .component('fountainFooter', footer)
   .component('friends', friends)
