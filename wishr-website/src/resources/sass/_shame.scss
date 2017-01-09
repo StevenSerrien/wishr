@@ -30,7 +30,31 @@ p.switch {
   border-radius: 5px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
+  &.new-wishlist {
+    top: 0px;
+    height: 300px;
+
+    label {
+      left:250px;
+    }
+  }
+
   &.normal {
+
+    &.new-wishlist {
+      label {
+        left:170px;
+      }
+
+      /* active state */
+      .inputMaterial:focus ~ label, .inputMaterial:valid ~ label, .inputMaterial:not(:placeholder-shown) ~ label 		{
+        top:-20px;
+        left: 150px;
+        font-size:14px;
+
+        color:white;
+      }
+    }
     margin-left: 0px;
     margin-right: 0px;
 
@@ -172,5 +196,5 @@ section#login {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  
+
 }

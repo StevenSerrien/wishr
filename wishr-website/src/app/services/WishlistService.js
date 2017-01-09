@@ -41,6 +41,26 @@ function WishlistService($http, $log, $rootScope, $q) {
     }
     return $q.when(results);
   };
+
+  service.storeWishlist = function (wname, callback) {
+    if (localStorage.token) {
+      $http({
+        method: "POST",
+        headers: {
+          'Content-Type': undefined,
+          'Authorization': 'Bearer ' + localStorage.token
+        },
+        data: {
+          name: wname
+        },
+        url: $rootScope.BASE_URL + "/wishlist/store"
+      }).then(function mySucces(response) {
+        callback(true);
+      }, function myError(response) {
+        callback(false);
+      });
+    }
+  };
 }
 
 module.exports = WishlistService;
