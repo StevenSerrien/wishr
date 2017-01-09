@@ -1,4 +1,4 @@
-function dashboardController($scope, $log, $rootScope, $timeout, wish, $uibModal, $state) {
+function dashboardController($scope, $log, $rootScope, $timeout, wish, $uibModal, $state, $http) {
 $scope.user = {};
 $scope.wishlists = {};
 
@@ -7,6 +7,24 @@ $scope.getWishlists = function () {
     $scope.wishlists = results.wishlists;
     $log.log($scope.wishlists);
   });
+};
+
+$scope.getWishes = function () {
+  if (localStorage.token) {
+    $http({
+      method: "GET",
+      headers: {
+        'Content-Type': undefined,
+        'Authorization': 'Bearer ' + localStorage.token
+      },
+      url: $rootScope.BASE_URL + "/wishlist"
+    }).then(function mySucces(response) {
+      $scope.wishlists = response.data[1];
+      return angular.toJson(response.data);
+    }, function myError(response) {
+      $log.log(response);
+    });
+  }
 };
 
 $scope.openModalNewWishlist = function () {
@@ -18,12 +36,10 @@ $scope.openModalNewWishlist = function () {
        pscope: $scope
   });
 };
-$scope.getWishlists();
+// $scope.getWishlists();
+$scope.wishlists = $scope.getWishes();
+// $log.log($scope.wishlists);
 init();
-
-$scope.test = function () {
-  $log.log('test');
-};
 
 function init() {
   $timeout(function () {
