@@ -93,8 +93,18 @@ button[disabled], html input[disabled] {
 
 
   }
+}
 
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 6px 0;
+  border-radius: 50%;
 
+  &.yellow {
+    background-color: $color-main !important;
+    color: white;
 
-
+  }
 }

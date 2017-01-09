@@ -40,3 +40,12 @@ section#dashboard {
 
   }
 }
+
+.arrow-dashboard {
+  position: relative;
+  left: -30px;
+}
+
+.dashboard-info .arrow-dashboard, .dashboard-info h2 {
+  display: inline-block;
+}

@@ -16,7 +16,7 @@ function init() {
     $scope.user = angular.fromJson(localStorage.user);
     $log.log($scope.user);
     // $log.log($scope.wishlists);
-  }, 100);
+  }, 500);
 }
 }
 module.exports = {

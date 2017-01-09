@@ -12,6 +12,7 @@
             </div>
         <!-- <h1 class='text'><img class='img-circle avatar' src="https://api.adorable.io/avatars/146/{{user.email}}.png" alt=""> Welcome {{user.name}}! Here you can add your wishlists.</h1> -->
         </div>
+
         <div class='col-lg-4 col-xs-6 margin-top-100 wish-card-wrap' ng-repeat="wishlist in wishlists">
           <div class='wish-card'>
             <a href="">
@@ -25,8 +26,10 @@
           </div>
         </div>
         <div class='row'>
-          <div class='col-xs-12'>
-            <!-- <h2>These are your wishlists you added.</h2> -->
+          <div class='col-xs-12 dashboard-info'>
+            <object class='arrow-dashboard' data="resources/images/arrow-dashboard.svg" type="image/svg+xml" width="70px" height="auto">
+            </object>
+            <h2>Here you can find your wishlists. Click this button to add more!    <button class='btn btn-circle yellow'><i class="fa fa-plus" aria-hidden="true"></i></button></h2>
           </div>
         </div>
 
