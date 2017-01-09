@@ -44,10 +44,10 @@ function WishlistService($http, $log, $rootScope, $q) {
 
   service.storeWishlist = function (wname, callback) {
     if (localStorage.token) {
+      $log.log('Voorbij');
       $http({
         method: "POST",
         headers: {
-          'Content-Type': undefined,
           'Authorization': 'Bearer ' + localStorage.token
         },
         data: {

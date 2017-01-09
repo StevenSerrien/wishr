@@ -1,5 +1,6 @@
-function friendsController() {
+function friendsController($scope) {
   this.text = 'My brand new component!';
+  $scope.text = 'hallo';
 }
 
 module.exports = {

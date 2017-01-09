@@ -16,6 +16,9 @@ var friends = require('./app/components/dashboard/friends');
 var header = require('./app/header');
 var footer = require('./app/footer');
 
+// Modals
+var mWishlist = require('./app/modals/newWishlist/newWishlist');
+
 // SERVICES
 var authenticationservice = require('./app/services/AuthenticationService');
 var wishlistservice = require('./app/services/WishlistService');
@@ -32,6 +35,7 @@ angular
   .component('fountainHeader', header)
   .component('fountainFooter', footer)
   .component('friends', friends)
+  .component('mWishlist', mWishlist)
   .service('auth', authenticationservice)
   .service('wish', wishlistservice)
   .run(function ($rootScope) {
