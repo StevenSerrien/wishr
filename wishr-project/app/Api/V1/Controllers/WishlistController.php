@@ -19,22 +19,15 @@ class WishlistController extends Controller
 
 	    $userWishlists = $currentUser->wishlist()->get();
 
-	    $userids = array();
-
 	    $response = array();
 
 	    foreach ($userWishlists as $key) {
 	    	foreach ($key->item as $item) {
 	    		$user = $item->user_id;
-	    		//array_push($userids, $user);	
 	    	}
 	    }
 
 	    array_push($response, $user, $userWishlists);	
-
-	    // dd($userWishlists);
-
-	    // $users = $userWishlists;
 
 	    return $response;
 	}

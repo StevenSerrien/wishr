@@ -29,10 +29,6 @@ class FriendsController extends Controller
 	      $not_friends->whereNotIn('id', $currentUser->friends->modelKeys());
 	    }
 
-    	// $friends = User::find($currentUser->id)->friends;
-
-    	// $user_friends = $currentUser->friends;
-
 	    $not_friends = $not_friends->get();
 
 	    return $not_friends;
