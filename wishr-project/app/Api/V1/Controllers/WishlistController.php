@@ -23,14 +23,23 @@ class WishlistController extends Controller
 
 	    if (count($userWishlists) > 0) {
 	    foreach ($userWishlists as $key) {
+
 	    	foreach ($key->item as $item) {
+	    	if (isset($item)) {
 	    		$user = $item->user_id;
+	    	}
 	    	}
 	    }
 
-	    array_push($response, $user, $userWishlists);	
+	    if (isset($user)) {
+	    	array_push($response, $user, $userWishlists);
+	    	return $response;
+	    }
+	    else {
+	    	return $userWishlists;
+	    }
 
-	    return $response;
+	    
 		}
 		else {
 			return $userWishlists;
