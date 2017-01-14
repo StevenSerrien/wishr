@@ -19,6 +19,7 @@ class ItemController extends Controller
 	{
 	    $currentUser = JWTAuth::parseToken()->authenticate();
 	    $userWishlist = $currentUser->wishlist()->first();
+
 	    return $userWishlist
 	        ->item()
 	        ->get()
@@ -26,14 +27,33 @@ class ItemController extends Controller
 	}
 
 	public function show($id){
+
 		$currentUser = JWTAuth::parseToken()->authenticate();
 
 		$wishlist = Wishlist::find($id);
 
-		return $wishlist
-	        ->item()
-	        ->get()
-	        ->toArray();
+		$wishlistItems = $wishlist->item()->get();
+
+		$response = array();
+
+		foreach ($wishlistItems as $key) {
+	    	foreach ($key->photo as $photo) {
+	    	if (isset($photo)) {
+	    		$pic = $photo->name;
+	    	}
+	    	}
+		}
+
+		if (isset($pic)) {
+	    	array_push($response, $pic, $wishlistItems);
+	    	return $response;
+	    }
+
+	    else {
+	    	return $wishlistItems;
+	    }
+
+
 	}
 
     public function store(Request $request, $id)
