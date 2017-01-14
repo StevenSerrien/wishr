@@ -49,3 +49,21 @@ section#dashboard {
 .dashboard-info .arrow-dashboard, .dashboard-info h2 {
   display: inline-block;
 }
+
+.friend-ref > button {
+  margin-right: 50px;
+}
+
+.empty-wishlist-message {
+  color: $color-main;
+  font-family: $font-secundary;
+  font-weight: bolder;
+  min-height: 400px;
+  button {
+    top: 150px;
+    left: 40%;
+  }
+  h2 {
+
+  }
+}

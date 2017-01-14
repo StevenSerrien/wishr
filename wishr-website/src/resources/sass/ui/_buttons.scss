@@ -108,3 +108,14 @@ button[disabled], html input[disabled] {
 
   }
 }
+
+.friend-ref {
+  color: $color-main;
+  font-family: $font-secundary;
+  
+  text-decoration: none;
+  &.hover {
+    opacity: 0.7;
+
+  }
+}

@@ -1,6 +1,7 @@
 function dashboardController($scope, $log, $rootScope, $timeout, wish, $uibModal, $state, $http) {
 $scope.user = {};
 $scope.wishlists = {};
+$scope.wishlistsAvailable = false;
 
 $scope.getWishlists = function () {
   wish.getAllWishlists().then(function (results) {
@@ -19,10 +20,16 @@ $scope.getWishes = function () {
       },
       url: $rootScope.BASE_URL + "/wishlist"
     }).then(function mySucces(response) {
-      $scope.wishlists = response.data[1];
+      $log.log(response.data.wishlists);
+      $scope.wishlists = response.data.wishlists;
+
+      if ($scope.wishlists.length >= 0) {
+        $scope.wishlistsAvailable = true;
+      }
       return angular.toJson(response.data);
     }, function myError(response) {
-      $log.log(response);
+      $scope.wishlistsAvailable = false;
+      // $log.log(response);
     });
   }
 };
@@ -42,6 +49,8 @@ $scope.wishlists = $scope.getWishes();
 init();
 
 function init() {
+  $scope.wishlistsAvailable = false;
+  $log.log($scope.wishlistsAvailable);
   $timeout(function () {
     $scope.user = angular.fromJson(localStorage.user);
     $log.log($scope.user);
