@@ -30,23 +30,21 @@ class ItemController extends Controller
 
 		$currentUser = JWTAuth::parseToken()->authenticate();
 
+		$response = array();
+
 		$wishlist = Wishlist::find($id);
 
-		$wishlistowner = User::where('id', '=', $wishlist->user_id);
+		$wishlistowner = User::where('id', '=', $wishlist->user_id)->get();
 
 		$wishlistItems = $wishlist->item()->get();
 
-		$response = array();
-
 		foreach ($wishlistItems as $key) {
-	    	foreach ($key->photo as $photo) {
-		    	if (isset($photo)) {
-		    		$pic = $photo->name;
-		    	}
-	    	}
+			$key->photo;
 		}
 
-	    	return $wishlistItems;
+		array_push($response, $wishlistowner, $wishlist, $wishlistItems);
+
+	    return $response;
 
 
 
