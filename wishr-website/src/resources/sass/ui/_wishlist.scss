@@ -10,6 +10,36 @@ section#wishlist {
 div.container.wishlist-section {
   margin-top: $nav-height;
 
+  .profile-bar {
+    background-color: rgb(255, 176, 83);
+    margin-bottom: 20px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 2px solid rgb(233, 233, 233);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    img {
+      float: left;
+    }
+    .profile-info {
+      float:left;
+      margin-left: 20px;
+    }
+
+    h1 {
+      position: relative;
+
+      font-family: $font-special;
+    }
+    h1, h2 {
+      color: white !important;
+      margin-top:10px;
+      margin-bottom: 0px;
+
+    }
+  }
+
 
   .headtitle {
     margin-bottom: 50px;
@@ -31,31 +61,49 @@ div.container.wishlist-section {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     z-index: 50;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    margin-bottom: 20px;
   }
 
   .item-outer {
     position: relative;
     border-radius: $item-border-radius;
-    border: 5px solid rgb(224, 224, 224);
   }
 
+  .a-overlay {
 
+  }
+
+  .a-overlay:hover .item-info {
+    min-width: 30%;
+    width: auto;
+
+  }
+
+  .a-overlay:hover .item-info-inner {
+      opacity: 1;
+      display: block;
+
+  }
 
   .item-info {
     padding: 10px;
     position: absolute;
     height: 100%;
-    min-width: 10%;
+    min-width: 0%;
+    width: 10%;
     border-radius: $item-border-radius;
     background-color: #ffc85b;
     z-index: 100;
-    transition: all 0.2s ease;
+    transition: width 1.5s ease;
+    transition: all 1.5s ease;
 
     .item-info-inner {
+
       border-radius: $item-border-radius;
-      // opacity: 0;
-      // display: none;
-      transition: all 0.2s ease;
+      opacity: 0;
+      display: none;
+      transition: all 0.8s ease;
     }
     h2 {
       overflow: hidden;
@@ -70,12 +118,5 @@ div.container.wishlist-section {
     }
   }
 
-  .a-overlay:hover .item-info {
-    // width: 30%;
-  }
 
-  .a-overlay:hover .item-info-inner {
-      // opacity: 1;
-      // display: block;
-  }
 }

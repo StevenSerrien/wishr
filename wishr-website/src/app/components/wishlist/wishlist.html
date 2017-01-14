@@ -1,10 +1,18 @@
 <section id='wishlist'>
 <div class='container wishlist-section '>
   <div class='row'>
-    <h1 class='text-center headtitle'>Check out the wishes below!</h1>
+    <div class='col-xs-12'>
+    <div class='profile-bar clearfix'>
+    <img class='img-circle avatar' src="https://api.adorable.io/avatars/146/{{owner.email}}.png" alt="Profile picture of wishlist owner">
+    <div class='profile-info clearfix'>
+    <h1 class='headtitle'>This is {{owner.name}}'s {{wishlist.name}} wishlist.</h1>
+    <h2 class='headtitle'>Help {{owner.name}} by adding more!</h2>
+    </div>
+    </div>
+    </div>
     <div class='cat-1' ng-repeat="item in items">
-      <div class='col-xs-12 col-lg-{{item.colSpan}}'>
-        <a href="{{ item.url }}" class='a-overlay'>
+      <div class='col-xs-12 col-lg-{{item.colSpan}} a-overlay'>
+        <a href="{{ item.url }}" class=''>
         <div class='item-outer'>
         <div class='item-info'>
           <div class='item-info-inner'>
@@ -14,7 +22,9 @@
           <span class='added-by'>Added by: {{item.user_id}}</span>
           </div>
         </div>
-        <div class='item' style="background-image:url('http://i.imgur.com/XRCFUEE.jpg');">
+
+        <!-- <div class='item' style="background-image:url('http://i.imgur.com/XRCFUEE.jpg');"> -->
+        <div class='item' style="background-image:url('{{ $root.UPLOAD_URL }}uploads/products/{{ item.photo[0].name }}');">
           </div>
         </div>
         </a>

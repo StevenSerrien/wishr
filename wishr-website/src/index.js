@@ -43,4 +43,5 @@ angular
   .run(function ($rootScope) {
   // $rootScope.BASE_URL = "http://localhost:8888/public/";
   $rootScope.BASE_URL = "http://wishr-backend.dev/api";
+  $rootScope.UPLOAD_URL = "http://wishr-backend.dev/";
 });
