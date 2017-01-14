@@ -32,26 +32,22 @@ class ItemController extends Controller
 
 		$wishlist = Wishlist::find($id);
 
+		$wishlistowner = User::where('id', '=', $wishlist->user_id);
+
 		$wishlistItems = $wishlist->item()->get();
 
 		$response = array();
 
 		foreach ($wishlistItems as $key) {
 	    	foreach ($key->photo as $photo) {
-	    	if (isset($photo)) {
-	    		$pic = $photo->name;
-	    	}
+		    	if (isset($photo)) {
+		    		$pic = $photo->name;
+		    	}
 	    	}
 		}
 
-		if (isset($pic)) {
-	    	array_push($response, $pic, $wishlistItems);
-	    	return $response;
-	    }
-
-	    else {
 	    	return $wishlistItems;
-	    }
+
 
 
 	}
