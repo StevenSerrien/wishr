@@ -1,7 +1,12 @@
-function friendsController($scope, $http, $rootScope, $log, $q) {
+function friendsController($scope, $http, $rootScope, $log, $q, $window) {
   this.text = 'My brand new component!';
   $scope.text = 'hallo';
   $scope.users = {};
+
+  $scope.redirectToWishlist = function(id) {
+    $window.location.href = '/wishlist/' + id;
+    // $window.location.reload();
+  };
 
   $scope.getItemsOnWishy = function (id) {
     $http({

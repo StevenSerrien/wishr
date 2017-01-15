@@ -1,4 +1,4 @@
-function wishlistController(wish, $scope, $log, $stateParams, auth, $uibModal) {
+function wishlistController(wish, $scope, $log, $stateParams, auth, $uibModal, $window) {
 
   this.text = 'My brand new component!';
   $log.log($stateParams.wishlistId);
