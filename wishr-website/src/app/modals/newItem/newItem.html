@@ -2,39 +2,39 @@
   <div class="yellow-form new-wishlist normal relative extended">
     <form name="wishForm" ng-submit="createNewItem()" class='relative'>
     <h1 class="text-center">Yo, add a new wish!</h1>
-    <div class="group center" ng-class="{ 'has-error' : wishlistForm.wname.$invalid && !wishlistForm.email.$pristine }" >
+    <div class="group center" ng-class="{ 'has-error' : wishForm.wname.$invalid && !wishForm.wname.$pristine }" >
       <input class="inputMaterial center" name='wname' type="text" ng-model="itemNew.wname" placeholder="Add a name of the item." ng-minlength="3" ng-maxlength="15" required>
       <span class="highlight center"></span>
       <span class="bar center"></span>
 
     </div>
-    <div class="group center" ng-class="{ 'has-error' : wishlistForm.wname.$invalid && !wishlistForm.email.$pristine }" >
-      <input class="inputMaterial center" name='wname' type="text" ng-model="itemNew.wcategory" placeholder="What's the item's category?" ng-minlength="3" ng-maxlength="11" required>
+    <div class="group center" ng-class="{ 'has-error' : wishForm.wcategory.$invalid && !wishForm.wcategory.$pristine }" >
+      <input class="inputMaterial center" name='wcategory' type="text" ng-model="itemNew.wcategory" placeholder="What's the item's category?" ng-minlength="3" ng-maxlength="11" required>
       <span class="highlight center"></span>
       <span class="bar center"></span>
 
     </div>
-    <div class="group center" ng-class="{ 'has-error' : wishlistForm.wname.$invalid && !wishlistForm.email.$pristine }" >
-      <input class="inputMaterial center" name='wname' type="text" ng-model="itemNew.wprice" placeholder="What's the price?" price required>
+    <div class="group center" ng-class="{ 'has-error' : wishForm.wprice.$invalid && !wishForm.wprice.$pristine }" >
+      <input class="inputMaterial center" name='wprice' type="text" ng-model="itemNew.wprice" placeholder="What's the price?" price required>
       <span class="highlight center"></span>
       <span class="bar center"></span>
 
     </div>
-    <div class="group center" ng-class="{ 'has-error' : wishlistForm.wname.$invalid && !wishlistForm.email.$pristine }" >
-      <input class="inputMaterial center" name='wname' type="text" ng-model="itemNew.wurl" placeholder="Paste an url to buy it." ng-minlength="3" ng-maxlength="11" required>
+    <div class="group center" ng-class="{ 'has-error' : wishForm.wurl.$invalid && !wishForm.wurl.$pristine }" >
+      <input class="inputMaterial center" name='wurl' type="text" ng-model="itemNew.wurl" placeholder="Paste an url to buy it." ng-minlength="10"  required>
       <span class="highlight center"></span>
       <span class="bar center"></span>
 
     </div>
-    <div class="group center" ng-class="{ 'has-error' : wishlistForm.wname.$invalid && !wishlistForm.email.$pristine }" >
-      <input type="file" value="" id="mainphoto" fileread='itemNew.wphoto' required />
+    <div class="group center" ng-class="{ 'has-error' : wishForm.wphoto.$invalid && !wishForm.wphoto.$pristine }" >
+      <input type="file" name='wphoto' value="" id="mainphoto" fileread='itemNew.wphoto' required />
       <span class="highlight center"></span>
       <span class="bar center"></span>
 
     </div>
     <div class="col-xs-12">
-      <img class='center' ng-if="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-      <button type="submit" ng-disabled="wishlistForm.$invalid" class='button type-2 register'>Add it!</button>
+
+      <button type="submit" ng-disabled="wishForm.$invalid" class='button type-2 register'>Add it!</button>
     </div>
     </form>
   </div>
