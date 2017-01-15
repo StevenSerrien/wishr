@@ -16,6 +16,7 @@ module.exports = {
     "block-scoped-var": 0,
     "eqeqeq": 0,
     'no-redeclare': 0,
-    "space-before-function-paren": 0
+    "space-before-function-paren": 0,
+    "no-loop-func": 0
   }
 }

@@ -198,3 +198,17 @@ section#login {
   background-size: cover;
 
 }
+
+section#friends {
+  .wishlist-section {
+    min-height: 100vh;
+
+    .profile-info {
+      h1,h2,h3,p,span {
+        font-size: 0.9em;
+      }
+
+    }
+  }
+
+}

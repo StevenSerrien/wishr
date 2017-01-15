@@ -10,6 +10,8 @@ $api->version('v1', function (Router $api) {
 
 
     $api->post('searchuser', 'App\Api\V1\Controllers\FriendsController@searchUsers');
+    $api->get('getusers', 'App\Api\V1\Controllers\FriendsController@getUsers');
+
 
 
     $api->group(['prefix' => 'auth'], function(Router $api) {

@@ -1,4 +1,15 @@
-<div class="component">
-  <h2>{{$ctrl.text}}</h2>
-  <h3>{{text}}</h3>
-</div>
+<section id='friends'>
+<div class='container wishlist-section'>
+  <div ng-repeat='user in users' class='col-xs-12 col-md-6'>
+    <div class='user-card'>
+      <div class='profile-bar clearfix'>
+      <img class='img-circle avatar' src="https://api.adorable.io/avatars/146/{{user.email}}.png" alt="Profile picture of wishlist owner">
+      <div class='profile-info clearfix'>
+        <h1>{{user.email}} - {{user.name}}</h1>
+
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
