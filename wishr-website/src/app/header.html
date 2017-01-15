@@ -1,7 +1,7 @@
 <nav id="nav-main">
   <div class='container-fluid'>
     <div class="navbar-header">
-      <a class="navbar-brand"><img ng-src="./resources/images/WISHRv6.png" class='img-responsive' alt="mowly-logo"></a>
+      <a ng-href="/" class="navbar-brand"><img ng-src="./resources/images/WISHRv6.png" class='img-responsive' alt="mowly-logo"></a>
     </div>
     <div class="navbar-right">
       <ul class="nav navbar-nav">
@@ -17,11 +17,13 @@
     <div class="overlay" id="overlay">
       <nav class="overlay-menu">
         <ul>
-          <li ><a href="#">Home</a></li>
-          <li><a href="#">About us</a></li>
+          <li ><a ng-href='/'>Home</a></li>
+          <!-- <li><a href="#">About us</a></li> -->
           <!-- <li><a href="#">Scrambler</a></li> -->
-          <li ng-if="!loggedIn()"><a>Log in</a></li>
-          <li ng-if="loggedIn()"><a href="">My wishlists</a></li>
+
+          <li ng-if="!loggedIn()"><a ng-href="/login">Log in</a></li>
+          <li ng-if="!loggedIn()"><a ng-href="/register">Register</a></li>
+          <li ng-if="loggedIn()"><a ng-href="/dashboard">My wishlists</a></li>
           <li ng-if="loggedIn()"><a ng-click="logout();">Log out</a></li>
         </ul>
       </nav>
