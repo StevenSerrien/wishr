@@ -31,6 +31,10 @@ class FriendsController extends Controller
 
 	    $not_friends = $not_friends->get();
 
+	    foreach ($not_friends as $key) {
+			$key->wishlist;
+		}
+
 	    return $not_friends;
 	}
 
