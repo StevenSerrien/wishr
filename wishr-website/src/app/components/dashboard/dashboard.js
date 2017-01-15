@@ -20,11 +20,26 @@ $scope.getWishes = function () {
       },
       url: $rootScope.BASE_URL + "/wishlist"
     }).then(function mySucces(response) {
-      $log.log(response);
-      $scope.wishlists = response.data[1];
-      if ($scope.wishlists.length >= 0) {
-        $scope.wishlistsAvailable = true;
+      // $log.log(response.data[1]);
+      $log.log(response.data.wishlists);
+      if (response.data[1]) {
+        $log.log('isset-2');
+        $scope.wishlists = response.data[1];
+        if ($scope.wishlists.length >= 0) {
+          $scope.wishlistsAvailable = true;
+        }
       }
+      if (response.data.wishlists) {
+        $log.log('isset-1');
+        $scope.wishlists = response.data.wishlists;
+        if ($scope.wishlists.length >= 0) {
+          $scope.wishlistsAvailable = true;
+        }
+      }
+      // $scope.wishlists = response.data.wishlists;
+      // if ($scope.wishlists.length >= 0) {
+      //   $scope.wishlistsAvailable = true;
+      // }
       return angular.toJson(response.data[1]);
     }, function myError(response) {
       $scope.wishlistsAvailable = false;
