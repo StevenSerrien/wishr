@@ -27,6 +27,7 @@ var wishlistservice = require('./app/services/WishlistService');
 
 // DIRECTIVES
 var fileread = require('./app/directives/fileread');
+var price = require('./app/directives/price');
 
 require('./resources/sass/index.scss');
 
@@ -34,6 +35,7 @@ angular
   .module('app', [techsModule, 'ui.router', 'ngAnimate', 'toastr', 'ui.bootstrap'])
   .config(routesConfig)
   .directive('fileread', fileread)
+  .directive('price', price)
   .component('home', home)
   .component('register', register)
   .component('login', login)
