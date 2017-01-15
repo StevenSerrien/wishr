@@ -26,6 +26,7 @@
         </div>
         <div class='col-lg-4 col-xs-6 margin-top-100 wish-card-wrap' ng-repeat="wishlist in wishlists">
           <div class='wish-card'>
+            <span class='item-count'>{{wishlist.item.length}}</span>
             <a ng-href="/wishlist/{{ wishlist.id }}">
             <div class='titles'>
               <span>

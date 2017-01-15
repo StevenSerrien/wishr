@@ -18,6 +18,24 @@
   background-color: $color-main;
   border-radius: 10px;
 
+  .item-count {
+    position: absolute;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    vertical-align: middle;
+    padding-left: 8px;
+    top: -10px;
+    left: 20px;
+    padding-top: 0px;
+    color: $color-theme-2;
+    font-weight: bolder;
+    font-family: $font-special;
+    vertical-align: top;
+    border: 2px solid rgb(228, 228, 228);
+  }
+
 
   a {
     display: block;

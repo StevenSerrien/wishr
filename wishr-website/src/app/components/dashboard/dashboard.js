@@ -20,16 +20,15 @@ $scope.getWishes = function () {
       },
       url: $rootScope.BASE_URL + "/wishlist"
     }).then(function mySucces(response) {
-      $log.log(response.data.wishlists);
-      $scope.wishlists = response.data.wishlists;
-
+      $log.log(response);
+      $scope.wishlists = response.data[1];
       if ($scope.wishlists.length >= 0) {
         $scope.wishlistsAvailable = true;
       }
-      return angular.toJson(response.data);
+      return angular.toJson(response.data[1]);
     }, function myError(response) {
       $scope.wishlistsAvailable = false;
-      // $log.log(response);
+      $log.log(response);
     });
   }
 };
@@ -50,7 +49,6 @@ init();
 
 function init() {
   $scope.wishlistsAvailable = false;
-  $log.log($scope.wishlistsAvailable);
   $timeout(function () {
     $scope.user = angular.fromJson(localStorage.user);
     $log.log($scope.user);
