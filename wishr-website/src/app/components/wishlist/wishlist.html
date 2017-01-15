@@ -8,6 +8,10 @@
     <h1 class='headtitle'>This is {{owner.name}}'s {{wishlist.name}} wishlist.</h1>
     <h2 class='headtitle'>Help {{owner.name}} by adding more!</h2>
     </div>
+    <!-- <div ng-show='!sameUser' class='add-button'> -->
+    <div class='add-button'>
+      <button ng-click='openModalNewWishlist()' class='btn btn-circle white'><i class="fa fa-plus" aria-hidden="true"></i></button>
+    </div>
     </div>
     </div>
     <div class='cat-1' ng-repeat="item in items">

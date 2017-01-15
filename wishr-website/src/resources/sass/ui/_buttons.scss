@@ -105,14 +105,18 @@ button[disabled], html input[disabled] {
   &.yellow {
     background-color: $color-main !important;
     color: white;
+  }
 
+  &.white {
+    background-color: white !important;
+    color: $color-theme-2;
   }
 }
 
 .friend-ref {
   color: $color-main;
   font-family: $font-secundary;
-  
+
   text-decoration: none;
   &.hover {
     opacity: 0.7;
