@@ -25,11 +25,15 @@ var mNewItem = require('./app/modals/newItem/newItem');
 var authenticationservice = require('./app/services/AuthenticationService');
 var wishlistservice = require('./app/services/WishlistService');
 
+// DIRECTIVES
+var fileread = require('./app/directives/fileread');
+
 require('./resources/sass/index.scss');
 
 angular
   .module('app', [techsModule, 'ui.router', 'ngAnimate', 'toastr', 'ui.bootstrap'])
   .config(routesConfig)
+  .directive('fileread', fileread)
   .component('home', home)
   .component('register', register)
   .component('login', login)

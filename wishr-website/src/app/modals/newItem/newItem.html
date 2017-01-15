@@ -27,7 +27,7 @@
 
     </div>
     <div class="group center" ng-class="{ 'has-error' : wishlistForm.wname.$invalid && !wishlistForm.email.$pristine }" >
-      <input class="inputMaterial center" name='wname' type="text" ng-model="itemNew.wphoto" placeholder="Upload a cool photo." required>
+      <input type="file" value="" id="mainphoto" fileread='itemNew.wphoto' required />
       <span class="highlight center"></span>
       <span class="bar center"></span>
 
