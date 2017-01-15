@@ -27,10 +27,8 @@
 
     </div>
     <div class="group center" ng-class="{ 'has-error' : wishForm.wphoto.$invalid && !wishForm.wphoto.$pristine }" >
-      <input type="file" name='wphoto' value="" id="mainphoto" fileread='itemNew.wphoto' required />
-      <span class="highlight center"></span>
-      <span class="bar center"></span>
-
+      <label id='photolabel' for="wphoto">Choose a photo</label>
+      <input class='inputfile' type="file" name='wphoto' value="" id="wphoto" fileread='itemNew.wphoto' required />
     </div>
     <div class="col-xs-12">
 

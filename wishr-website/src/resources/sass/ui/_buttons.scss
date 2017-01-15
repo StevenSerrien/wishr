@@ -123,3 +123,35 @@ button[disabled], html input[disabled] {
 
   }
 }
+
+
+// Button for file input
+
+.inputfile {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+label#photolabel {
+  position: relative;
+  pointer-events:auto;
+  cursor: pointer;
+  font-size: 1.00em;
+  padding: 15px;
+  left: 50px;
+  padding-left: 150px;
+  padding-right: 155px;
+  color: white;
+  border: 3px solid white;
+  background-color: $color-main;
+  display: inline-block;
+
+  &:hover {
+    background-color: white;
+    color: $color-main;
+  }
+}

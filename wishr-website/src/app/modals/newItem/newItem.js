@@ -1,4 +1,4 @@
-function newItemController($scope, wish, $window, $log, $http, $rootScope, $stateParams) {
+function newItemController($scope, wish, $window, $log, $http, $rootScope, $stateParams, toastr) {
   this.text = 'My brand new component!';
   $scope.itemNew = {
     wname: '',
@@ -37,9 +37,10 @@ function newItemController($scope, wish, $window, $log, $http, $rootScope, $stat
         }
       }).then(function mySucces(response) {
         $log.log('Opgeslagen');
+        $window.location.href = '/wishlist/' + $stateParams.wishlistId;
       }, function myError(response) {
         $log.log(response);
-
+        toastr.error('Something went wrong. Photo was probably too big for us!');
       });
     }
 

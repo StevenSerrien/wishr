@@ -9,6 +9,10 @@ $(document).on("click", ".overlay-menu a", function(){
   $('#overlay').removeClass('open');
 });
 
+$(document).on('click', 'label#photolabel', function() {
+  console.log('Hallo');
+});
+
 
 $('#toggle').click(function() {
    ;
