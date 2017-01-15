@@ -6,6 +6,7 @@ function wishlistController(wish, $scope, $log, $stateParams, auth, $uibModal) {
   $scope.owner = {};
   $scope.wishlist = {};
   $scope.sameUser = false;
+  $scope.wishlistEmpty = true;
   $scope.currentUser = angular.fromJson(localStorage.user);
   // $log.log($scope.currentUser);
   // $scope.items = wish.getItemsOnWishlist($stateParams.wishlistId);
@@ -32,9 +33,13 @@ function wishlistController(wish, $scope, $log, $stateParams, auth, $uibModal) {
       $scope.owner = results[0][0];
       $log.log($scope.owner);
       $log.log($scope.currentUser);
+      $log.log($scope.items.length);
       if ($scope.owner.id === $scope.currentUser.id) {
         $log.log('This is the current users list');
         $scope.sameUser = true;
+      }
+      if ($scope.items.length > 0) {
+        $scope.wishlistEmpty = false;
       }
       // $log.log($scope.wishlist);
       // $log.log($scope.items);
