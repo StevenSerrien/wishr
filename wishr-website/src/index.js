@@ -19,6 +19,7 @@ var footer = require('./app/footer');
 
 // Modals
 var mWishlist = require('./app/modals/newWishlist/newWishlist');
+var mNewItem = require('./app/modals/newItem/newItem');
 
 // SERVICES
 var authenticationservice = require('./app/services/AuthenticationService');
@@ -38,6 +39,7 @@ angular
   .component('fountainFooter', footer)
   .component('friends', friends)
   .component('mWishlist', mWishlist)
+  .component('mNewItem', mNewItem)
   .service('auth', authenticationservice)
   .service('wish', wishlistservice)
   .run(function ($rootScope) {

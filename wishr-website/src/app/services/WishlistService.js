@@ -85,6 +85,10 @@ function WishlistService($http, $log, $rootScope, $q) {
     }
     return $q.when(items);
   };
+
+  service.addItemToWishlist = function (name, category, url, price, rating, photo) {
+
+  };
 }
 
 module.exports = WishlistService;

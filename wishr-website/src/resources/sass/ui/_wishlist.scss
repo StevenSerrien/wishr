@@ -1,3 +1,10 @@
+.yellow-form.new-wishlist.normal.extended {
+  min-height: 750px;
+
+  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white !important;
+  }
+}
 
 section#wishlist {
   background: url(/resources/images/background-art-2.svg)center center;

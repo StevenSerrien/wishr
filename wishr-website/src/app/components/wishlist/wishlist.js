@@ -1,4 +1,4 @@
-function wishlistController(wish, $scope, $log, $stateParams, auth) {
+function wishlistController(wish, $scope, $log, $stateParams, auth, $uibModal) {
 
   this.text = 'My brand new component!';
   $log.log($stateParams.wishlistId);
@@ -12,6 +12,16 @@ function wishlistController(wish, $scope, $log, $stateParams, auth) {
   // $log.log($scope.items);  var rand = 0;
   $scope.getRandomSpan = function (max, min) {
       return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  $scope.openModalNewItemOnWishlist = function () {
+    $scope.test = function () {
+      $log.log('test');
+    };
+    $uibModal.open({
+         component: 'mNewItem',
+         pscope: $scope
+    });
   };
 
   $scope.getItemsOnWishlist = function () {
