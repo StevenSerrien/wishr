@@ -78,7 +78,7 @@ function AuthenticationService($http, $rootScope, $log, toastr, $location) {
   // Function to logout by removing localstorage.token
   service.logout = function () {
     localStorage.clear();
-    $location.path('/');
+    $location.path('/login');
   };
 }
 
