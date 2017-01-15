@@ -52,24 +52,23 @@ function friendsController($scope, $http, $rootScope, $log, $q) {
       },
       url: $rootScope.BASE_URL + "/getusers"
     }).then(function successCallback(response) {
-
       $scope.users = response.data.users;
-      for (var i = 1; i < $scope.users.length; i++) {
-        // $scope.users[i].wishlists = $scope.getItemsOnWishy(i);
-
-      }
+      $log.log($scope.users);
+      // for (var i = 1; i < $scope.users.length; i++) {
+      //   // $scope.users[i].wishlists = $scope.getItemsOnWishy(i);
+      //
+      // }
       // $log.log($scope.users);
     }, function errorCallback(error) {
       $log.log(error);
     });
   };
-  $scope.getItemsOnWishyy(13).then(function (result) {
-    $scope.test = result;
-    $log.log(result);
-  });
-  $log.log($scope.test);
+  // $scope.getItemsOnWishyy(13).then(function (result) {
+  //   $scope.test = result;
+  //   $log.log(result);
+  // });
+  // $log.log($scope.test);
   $scope.getAllUsers();
-
 }
 
 module.exports = {

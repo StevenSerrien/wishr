@@ -6,6 +6,12 @@
       <img class='img-circle avatar' src="https://api.adorable.io/avatars/146/{{user.email}}.png" alt="Profile picture of wishlist owner">
       <div class='profile-info clearfix'>
         <h1>{{user.email}} - {{user.name}}</h1>
+        <div ng-repeat="wishlist in user.wishlist">
+
+        <a ng-href="/wishlist/{{wishlist.id}}"><button class='button type-2 center float-left'>{{wishlist.name}}</button></a>
+
+
+        </div>
 
       </div>
       </div>
